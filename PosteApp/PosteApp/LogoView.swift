@@ -17,7 +17,7 @@ struct LogoView: View {
     
     var body: some View {
         if isActive == true {
-            ContentView()
+            LoginView()
         }
         else {
             VStack {
