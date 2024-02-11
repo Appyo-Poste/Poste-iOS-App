@@ -11,7 +11,7 @@ import SwiftUI
 struct PosteAppApp: App {
     var body: some Scene {
         WindowGroup {
-            LogoView()
+            SplashView()
         }
     }
 }

@@ -53,7 +53,8 @@ struct LoginView: View {
             }
         }.padding(.all)
         Button("Login") {
-            
+            print("click")
+            Postman.loginCall("1", "1")
         }
         .foregroundColor(.white)
         .frame(width: 300, height: 50)
@@ -65,7 +66,7 @@ struct LoginView: View {
                 .font(.headline)
                 .multilineTextAlignment(.leading)
             Button("Sing Up") {
-                
+                print("click")
             }
             .font(.headline)
             .multilineTextAlignment(.leading)

@@ -9,7 +9,7 @@ import Foundation
 
 import SwiftUI
 
-struct LogoView: View {
+struct SplashView: View {
     
     @State var isActive = false
     @State var size = 0.7
@@ -32,6 +32,7 @@ struct LogoView: View {
             }.onAppear() {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     withAnimation() {
+                        print("done")
                         self.isActive = true;
                     }
                 }
@@ -41,5 +42,5 @@ struct LogoView: View {
 }
 
 #Preview {
-    LogoView()
+    SplashView()
 }

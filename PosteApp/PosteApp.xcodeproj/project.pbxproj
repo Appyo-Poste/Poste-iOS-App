@@ -7,21 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B69D9EEE2B7862EE008C4D8E /* CurrentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D9EED2B7862EE008C4D8E /* CurrentData.swift */; };
 		B69EF1932B72FC1900C607A5 /* PosteAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EF1922B72FC1900C607A5 /* PosteAppApp.swift */; };
 		B69EF1952B72FC1900C607A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EF1942B72FC1900C607A5 /* LoginView.swift */; };
 		B69EF1972B72FC1A00C607A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69EF1962B72FC1A00C607A5 /* Assets.xcassets */; };
 		B69EF19A2B72FC1A00C607A5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69EF1992B72FC1A00C607A5 /* Preview Assets.xcassets */; };
-		B69EF1A12B7303A100C607A5 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EF1A02B7303A100C607A5 /* LogoView.swift */; };
+		B69EF1A12B7303A100C607A5 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EF1A02B7303A100C607A5 /* SplashView.swift */; };
 		B6D655612B77261600BBA41D /* Postman.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D655602B77261600BBA41D /* Postman.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B69D9EED2B7862EE008C4D8E /* CurrentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentData.swift; sourceTree = "<group>"; };
 		B69EF18F2B72FC1900C607A5 /* PosteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PosteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69EF1922B72FC1900C607A5 /* PosteAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteAppApp.swift; sourceTree = "<group>"; };
 		B69EF1942B72FC1900C607A5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		B69EF1962B72FC1A00C607A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B69EF1992B72FC1A00C607A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B69EF1A02B7303A100C607A5 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		B69EF1A02B7303A100C607A5 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B6D655602B77261600BBA41D /* Postman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Postman.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,10 +59,11 @@
 			children = (
 				B69EF1922B72FC1900C607A5 /* PosteAppApp.swift */,
 				B69EF1942B72FC1900C607A5 /* LoginView.swift */,
-				B69EF1A02B7303A100C607A5 /* LogoView.swift */,
+				B69EF1A02B7303A100C607A5 /* SplashView.swift */,
 				B6D655602B77261600BBA41D /* Postman.swift */,
 				B69EF1962B72FC1A00C607A5 /* Assets.xcassets */,
 				B69EF1982B72FC1A00C607A5 /* Preview Content */,
+				B69D9EED2B7862EE008C4D8E /* CurrentData.swift */,
 			);
 			path = PosteApp;
 			sourceTree = "<group>";
@@ -144,8 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B69EF1952B72FC1900C607A5 /* LoginView.swift in Sources */,
-				B69EF1A12B7303A100C607A5 /* LogoView.swift in Sources */,
+				B69EF1A12B7303A100C607A5 /* SplashView.swift in Sources */,
 				B6D655612B77261600BBA41D /* Postman.swift in Sources */,
+				B69D9EEE2B7862EE008C4D8E /* CurrentData.swift in Sources */,
 				B69EF1932B72FC1900C607A5 /* PosteAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +293,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,6 +325,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
