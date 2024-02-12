@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct PosteAppApp: App {
+struct PosteApp: App {
     var body: some Scene {
         WindowGroup {
             SplashView()

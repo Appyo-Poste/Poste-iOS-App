@@ -6,18 +6,23 @@
 //
 
 import Foundation
-
 import SwiftUI
 
 struct SplashView: View {
     
-    @State var isActive = false
+    // @State var changeView:AppController.ActiveView = AppController.ActiveView.splash
+    @State var startViewChange = false
     @State var size = 0.7
     @State var opac  = 0.0
     
     var body: some View {
-        if isActive == true {
-            LoginView()
+        if startViewChange {
+            switch AppController.GetAppController().GetActiveView() {
+            case .splash:
+                SplashView()
+            case .login:
+                LoginView()
+            }
         }
         else {
             VStack {
@@ -33,7 +38,8 @@ struct SplashView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     withAnimation() {
                         print("done")
-                        self.isActive = true;
+                        AppController.GetAppController().SetActiveView(AppController.ActiveView.login)
+                        self.startViewChange = true;
                     }
                 }
             }

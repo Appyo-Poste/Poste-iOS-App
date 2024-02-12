@@ -51,6 +51,9 @@ public class Postman {
                     print("Error parsing responce")
                 }
             }
+            else {
+                print(error)
+            }
         }
         dataTask.resume()
     }
