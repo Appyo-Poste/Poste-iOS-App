@@ -13,10 +13,12 @@ public class AppController : ObservableObject {
     public enum ActiveView{
         case splash
         case login
+        case register
+        case folder
     }
     
     public static var appController:AppController? = nil
-    var activeView:ActiveView = ActiveView.splash
+    @Published var activeView:ActiveView = ActiveView.splash
     @Published var username:String = ""
 
     public static func GetAppController() -> AppController {
@@ -33,8 +35,9 @@ public class AppController : ObservableObject {
         return activeView
     }
     
-    public func login() {
-        username = "bob"
-        print(username)
+    public func login(_ username:String, _ password:String) -> Bool {
+        var result:Bool
+        result = Postman.loginCall(self, username, password)
+        return result
     }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// A view that breifly displays the Poste logo and then calls the next screen
 struct SplashView: View {
     
     // @State var changeView:AppController.ActiveView = AppController.ActiveView.splash
@@ -16,14 +17,20 @@ struct SplashView: View {
     @State var opac  = 0.0
     
     var body: some View {
+        // switch statment for page changing
         if startViewChange {
             switch AppController.GetAppController().GetActiveView() {
             case .splash:
                 SplashView()
             case .login:
                 LoginView()
+            case .register:
+                RegisterView()
+            case .folder:
+                FolderView()
             }
         }
+        // Build the layout of the screen and animation
         else {
             VStack {
                 ZStack {

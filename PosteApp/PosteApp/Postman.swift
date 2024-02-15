@@ -7,8 +7,25 @@
 
 import Foundation
 
+// This class handles making all API calls to the back end and returning the useful data to the APPcontroller
 public class Postman {
-    public static func loginCall(_ username:String, _ password:String) {
+    
+    // This fuction attemps to log in. it wil return true if the login was successful, and it will pass all reponce date to the AppController passed as the first parameter.
+    // STUB: Currently this method simulates a call to the backend.
+    public static func loginCall(_ appController:AppController, _ username:String, _ password:String) -> Bool {
+        // STUB LOGIN START
+        if username == "Admin@email.com" && password == "admin1234" {
+            print("Password Correct")
+            appController.username = username
+            return true
+        }
+        else {
+            print("Password Wrong")
+            return false
+        }
+        // STUB LOGIN END
+        
+        /* WORK IN PROGRESS API Call for loggin in
         print("login" + username + password)
         let url = URL(string: "https://10.0.2.2/api/login/")
         
@@ -56,5 +73,6 @@ public class Postman {
             }
         }
         dataTask.resume()
+         */
     }
 }

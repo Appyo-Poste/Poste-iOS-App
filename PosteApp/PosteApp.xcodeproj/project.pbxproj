@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B64B5F642B7D7B4000ABC5F4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B5F632B7D7B4000ABC5F4 /* RegisterView.swift */; };
+		B64B5F662B7D7BA200ABC5F4 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B5F652B7D7BA200ABC5F4 /* FolderView.swift */; };
 		B69D9EEE2B7862EE008C4D8E /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69D9EED2B7862EE008C4D8E /* AppController.swift */; };
 		B69EF1932B72FC1900C607A5 /* PosteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EF1922B72FC1900C607A5 /* PosteApp.swift */; };
 		B69EF1952B72FC1900C607A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69EF1942B72FC1900C607A5 /* LoginView.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B64B5F632B7D7B4000ABC5F4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		B64B5F652B7D7BA200ABC5F4 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 		B69D9EED2B7862EE008C4D8E /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		B69EF18F2B72FC1900C607A5 /* PosteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PosteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69EF1922B72FC1900C607A5 /* PosteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosteApp.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 			children = (
 				B69EF1922B72FC1900C607A5 /* PosteApp.swift */,
 				B69EF1942B72FC1900C607A5 /* LoginView.swift */,
+				B64B5F632B7D7B4000ABC5F4 /* RegisterView.swift */,
+				B64B5F652B7D7BA200ABC5F4 /* FolderView.swift */,
 				B69EF1A02B7303A100C607A5 /* SplashView.swift */,
 				B6D655602B77261600BBA41D /* Postman.swift */,
 				B69D9EED2B7862EE008C4D8E /* AppController.swift */,
@@ -147,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B69EF1952B72FC1900C607A5 /* LoginView.swift in Sources */,
+				B64B5F662B7D7BA200ABC5F4 /* FolderView.swift in Sources */,
 				B69EF1A12B7303A100C607A5 /* SplashView.swift in Sources */,
 				B6D655612B77261600BBA41D /* Postman.swift in Sources */,
+				B64B5F642B7D7B4000ABC5F4 /* RegisterView.swift in Sources */,
 				B69D9EEE2B7862EE008C4D8E /* AppController.swift in Sources */,
 				B69EF1932B72FC1900C607A5 /* PosteApp.swift in Sources */,
 			);
