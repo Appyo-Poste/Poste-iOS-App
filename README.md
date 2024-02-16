@@ -1,4 +1,4 @@
-﻿# Poste-iOS-App
+# Poste-iOS-App
 
 To get started you will need to download and install Xcode (version 14 or higher) from the apple store
 
