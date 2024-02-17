@@ -40,4 +40,11 @@ public class AppController : ObservableObject {
         result = Postman.loginCall(self, username, password)
         return result
     }
+    
+    // STUB
+    public func Register(_ email:String, _ firstName:String, _ lastName:String, _ password:String) -> Bool {
+        var result:Bool
+        result = Postman.RegisterCall(self, email, firstName, lastName, password)
+        return true
+    }
 }

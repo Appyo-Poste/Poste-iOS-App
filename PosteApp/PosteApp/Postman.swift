@@ -9,22 +9,48 @@ import Foundation
 
 // This class handles making all API calls to the back end and returning the useful data to the APPcontroller
 public class Postman {
+    // STUB DATA MODLE
+    static var stubNewUser:String = ""
+    static var stubNewFirstName:String = ""
+    static var stubNewLastName:String = ""
+    static var stubNewPass:String = ""
     
-    // This fuction attemps to log in. it wil return true if the login was successful, and it will pass all reponce date to the AppController passed as the first parameter.
+    // STUB: Currently this method simulates a call to the backend.
+    public static func RegisterCall(_ appController:AppController, _ username:String, _ firstName:String, _ lastName:String, _ password:String) -> Bool {
+        stubNewUser = username
+        stubNewFirstName = firstName
+        stubNewLastName = lastName
+        stubNewPass = password
+        if username == "Admin@email.com" {
+            print("User already exists")
+            return false
+        }
+        else {
+            print("User Added")
+            return true
+        }
+    }
+    
     // STUB: Currently this method simulates a call to the backend.
     public static func loginCall(_ appController:AppController, _ username:String, _ password:String) -> Bool {
-        // STUB LOGIN START
         if username == "Admin@email.com" && password == "admin1234" {
             print("Password Correct")
             appController.username = username
             return true
         }
+        else if username == stubNewUser && password == stubNewPass {
+            if stubNewPass != "" && stubNewUser != "" {
+                print("Password Correct")
+                appController.username = username
+                return true
+            }
+        }
         else {
             print("Password Wrong")
             return false
         }
-        // STUB LOGIN END
         
+        return false
         /* WORK IN PROGRESS API Call for loggin in
         print("login" + username + password)
         let url = URL(string: "https://10.0.2.2/api/login/")
