@@ -32,6 +32,20 @@ struct RegisterView: View {
             }
         }
         else {
+            if !goodEmail {
+                print("Email format incorrect")
+            }
+            if !goodNames {
+                print("First and/or Last name format incorrect")
+            }
+            if !goodPassword {
+                print("Password format incorrect")
+                print("Rules:")
+                print("     Must be 8 to 32 cahacters long")
+                print("     Must have at least one upper case character")
+                print("     Must have at least one lower case character")
+                print("     Must have at least one digit")
+            }
             print("Bad registration")
         }
     }
@@ -63,7 +77,6 @@ struct RegisterView: View {
     // Function to check if the names are valid
     func ValidatePassword() -> Bool {
         if password.count < 8 {
-            print("password must be at least 8 characters long")
             return false
         }
         
