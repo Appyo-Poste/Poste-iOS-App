@@ -20,6 +20,7 @@ public class AppController : ObservableObject {
     public static var appController:AppController? = nil
     @Published var activeView:ActiveView = ActiveView.splash
     @Published var username:String = ""
+    
 
     public static func GetAppController() -> AppController {
         if appController == nil {
