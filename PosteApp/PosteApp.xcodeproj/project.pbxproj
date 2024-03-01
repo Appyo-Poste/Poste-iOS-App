@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B636DECF2B9018A000AF53B0 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636DECE2B9018A000AF53B0 /* Folder.swift */; };
 		B636DED12B9019B600AF53B0 /* PermitedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636DED02B9019B600AF53B0 /* PermitedUser.swift */; };
+		B63B5D832B914E5C00F3DB70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B5D822B914E5C00F3DB70 /* User.swift */; };
 		B64B5F642B7D7B4000ABC5F4 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B5F632B7D7B4000ABC5F4 /* RegisterView.swift */; };
 		B64B5F662B7D7BA200ABC5F4 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B5F652B7D7BA200ABC5F4 /* FolderView.swift */; };
 		B673F58A2B8ACFA400B738FB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673F5892B8ACFA400B738FB /* Post.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		B636DECE2B9018A000AF53B0 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		B636DED02B9019B600AF53B0 /* PermitedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermitedUser.swift; sourceTree = "<group>"; };
+		B63B5D822B914E5C00F3DB70 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B64B5F632B7D7B4000ABC5F4 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		B64B5F652B7D7BA200ABC5F4 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 		B673F5892B8ACFA400B738FB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -67,18 +69,19 @@
 		B69EF1912B72FC1900C607A5 /* PosteApp */ = {
 			isa = PBXGroup;
 			children = (
-				B69EF1922B72FC1900C607A5 /* PosteApp.swift */,
-				B69EF1942B72FC1900C607A5 /* LoginView.swift */,
-				B64B5F632B7D7B4000ABC5F4 /* RegisterView.swift */,
-				B64B5F652B7D7BA200ABC5F4 /* FolderView.swift */,
+				B69D9EED2B7862EE008C4D8E /* AppController.swift */,
 				B636DECE2B9018A000AF53B0 /* Folder.swift */,
-				B69EF1A02B7303A100C607A5 /* SplashView.swift */,
+				B64B5F652B7D7BA200ABC5F4 /* FolderView.swift */,
+				B69EF1942B72FC1900C607A5 /* LoginView.swift */,
 				B636DED02B9019B600AF53B0 /* PermitedUser.swift */,
 				B673F5892B8ACFA400B738FB /* Post.swift */,
+				B69EF1922B72FC1900C607A5 /* PosteApp.swift */,
 				B6D655602B77261600BBA41D /* Postman.swift */,
-				B69D9EED2B7862EE008C4D8E /* AppController.swift */,
+				B64B5F632B7D7B4000ABC5F4 /* RegisterView.swift */,
+				B69EF1A02B7303A100C607A5 /* SplashView.swift */,
 				B69EF1962B72FC1A00C607A5 /* Assets.xcassets */,
 				B69EF1982B72FC1A00C607A5 /* Preview Content */,
+				B63B5D822B914E5C00F3DB70 /* User.swift */,
 			);
 			path = PosteApp;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				B69D9EEE2B7862EE008C4D8E /* AppController.swift in Sources */,
 				B69EF1932B72FC1900C607A5 /* PosteApp.swift in Sources */,
 				B636DECF2B9018A000AF53B0 /* Folder.swift in Sources */,
+				B63B5D832B914E5C00F3DB70 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
