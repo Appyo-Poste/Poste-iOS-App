@@ -72,11 +72,12 @@ struct LoginView: View {
                     }
                     HStack {
                         TextField("Username", text: $username).padding(.leading).frame(width: 300, height: 50).background(Color.black.opacity(0.15)).cornerRadius(10.0).keyboardType(/*@START_MENU_TOKEN@*/.emailAddress/*@END_MENU_TOKEN@*/)
+                            .autocapitalization(.none)
                     }
                     HStack {
                         Text("Password")
                             .font(.headline)
-                            .padding(.top)
+                            .padding([.top, .leading])
                         Spacer()
                     }
                     HStack {
@@ -84,6 +85,7 @@ struct LoginView: View {
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.15))
                             .cornerRadius(10.0)
+                            .autocapitalization(.none)
                     }
                     .padding(/*@START_MENU_TOKEN@*/[.leading, .bottom, .trailing]/*@END_MENU_TOKEN@*/)
                     
