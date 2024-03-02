@@ -8,13 +8,13 @@
 import Foundation
 
 public class User {
-    let LOGIN:String
+    let EMAIL:String
     let FIRST_NAME:String
     let LAST_NAME:String
-    let FOLDERS:Array<Folder>
+    let FOLDERS:Array<Folder> // Root folder must be folder 0
     
-    public init(_ login: String, _ firstName: String, _ lastName: String, _ folders: Array<Folder>) {
-        self.LOGIN = login
+    public init(_ email: String, _ firstName: String, _ lastName: String, _ folders: Array<Folder>) {
+        self.EMAIL = email
         self.FIRST_NAME = firstName
         self.LAST_NAME = lastName
         self.FOLDERS = folders
@@ -23,7 +23,9 @@ public class User {
     public func getFolder(_ folderId: String) -> Folder? {
         var ret:Folder? = nil
         for f in FOLDERS {
-            // WIP Pick up here-----------------------------------------
+            if f.TITLE == folderId {
+                ret = f
+            }
         }
         return ret
     }

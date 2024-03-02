@@ -17,9 +17,14 @@ struct RegisterView: View {
     @State private var startViewChange = false
     @StateObject var appCon = AppController.GetAppController()
     
+    // Function to handle the "Back" Button being clicked
+    func BackPressed() {
+        startViewChange = true
+        appCon.SetActiveView(AppController.ActiveView.login)
+    }
+    
     // Function to handle the "Register" Button being clicked
     func RegisterPressed() {
-        startViewChange = true
         var goodEmail = ValidateEmail()
         var goodNames = ValidateName()
         var goodPassword = ValidatePassword()
@@ -194,7 +199,7 @@ struct RegisterView: View {
                     .background(Color("mainLight"))
                     .cornerRadius(20)
                     Button("Back") {
-
+                        BackPressed()
                     }
                     .padding()
                     .foregroundColor(.white)

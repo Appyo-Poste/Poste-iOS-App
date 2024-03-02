@@ -21,4 +21,24 @@ public class Folder {
         self.FOLDERS = folders
         self.POSTS = posts
     }
+    
+    public func getFolder(_ folderId: String) -> Folder? {
+        var ret:Folder? = nil
+        for f in FOLDERS {
+            if f.TITLE == folderId {
+                ret = f
+            }
+        }
+        return ret
+    }
+    
+    public func getPost(_ postId: String) -> Post? {
+        var ret:Post? = nil
+        for p in POSTS {
+            if p.TITLE == postId {
+                ret = p
+            }
+        }
+        return ret
+    }
 }
