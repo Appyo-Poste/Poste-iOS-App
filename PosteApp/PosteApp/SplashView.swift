@@ -45,7 +45,7 @@ struct SplashView: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     withAnimation() {
                         print("done")
-                        AppController.GetAppController().SetActiveView(AppController.ActiveView.login)
+                        AppController.GetAppController().SetActiveView(AppController.ActiveView.folder)
                         self.startViewChange = true;
                     }
                 }

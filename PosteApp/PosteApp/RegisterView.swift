@@ -137,7 +137,7 @@ struct RegisterView: View {
             else {
                 VStack {
                     HStack(alignment: .bottom){
-                        Image("PosteLogoLarge").resizable().aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fit/*@END_MENU_TOKEN@*/).frame(width: 220.0).padding(.trailing, 130.0)
+                        Image("PosteLogoLarge").resizable().aspectRatio(contentMode: .fit).frame(width: 220.0).padding(.trailing, 130.0)
                     }
                     Text("Find, retrieve, and save. Simple as that.")
                         .font(.headline)
@@ -152,17 +152,17 @@ struct RegisterView: View {
                         Spacer()
                     }
                     HStack {
-                        TextField("Email Address", text: $email).padding(.leading).frame(width: 300, height: 50).background(Color.black.opacity(0.15)).cornerRadius(10.0).keyboardType(/*@START_MENU_TOKEN@*/.emailAddress/*@END_MENU_TOKEN@*/).textContentType(/*@START_MENU_TOKEN@*/.emailAddress/*@END_MENU_TOKEN@*/).autocapitalization(.none)
+                        TextField("Email Address", text: $email).padding(.leading).frame(width: 300, height: 50).background(Color.black.opacity(0.15)).cornerRadius(10.0).keyboardType(.emailAddress/*@END_MENU_TOKEN@*/).textContentType(/*@START_MENU_TOKEN@*/.emailAddress).autocapitalization(.none)
                     }
                     HStack {
                         TextField("First Name", text: $firstName).padding(.horizontal)
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.15))
-                            .cornerRadius(10.0).textContentType(/*@START_MENU_TOKEN@*/.givenName/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(10.0).textContentType(.givenName)
                             .lineLimit(32)
                             .autocapitalization(.none)
                     }
-                    .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+                    .padding(.horizontal)
                     HStack {
                         TextField("Last Name", text: $lastName).padding(.horizontal)
                             .frame(width: 300, height: 50)
@@ -171,25 +171,25 @@ struct RegisterView: View {
                             .lineLimit(32)
                             .autocapitalization(.none)
                     }
-                    .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+                    .padding(.horizontal)
                     HStack {
                         SecureField("Password", text: $password).padding(.horizontal)
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.15))
-                            .cornerRadius(10.0).textContentType(/*@START_MENU_TOKEN@*/.newPassword/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(10.0).textContentType(.newPassword)
                             .lineLimit(32)
                             .autocapitalization(.none)
                     }
-                    .padding(/*@START_MENU_TOKEN@*/.horizontal/*@END_MENU_TOKEN@*/)
+                    .padding(.horizontal)
                     HStack {
                         SecureField("Confirm Password", text: $passwordConfirm).padding(.horizontal)
                             .frame(width: 300, height: 50)
                             .background(Color.black.opacity(0.15))
-                            .cornerRadius(10.0).textContentType(/*@START_MENU_TOKEN@*/.newPassword/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(10.0).textContentType(.newPassword)
                             .lineLimit(32)
                             .autocapitalization(.none)
                     }
-                    .padding(/*@START_MENU_TOKEN@*/[.leading, .bottom, .trailing]/*@END_MENU_TOKEN@*/)
+                    .padding([.leading, .bottom, .trailing])
                     Button("Register") {
                         RegisterPressed()
                     }

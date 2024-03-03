@@ -11,13 +11,15 @@ public class User {
     let EMAIL:String
     let FIRST_NAME:String
     let LAST_NAME:String
-    let FOLDERS:Array<Folder> // Root folder must be folder 0
+    let FOLDERS:Array<Folder>
+    let ROOT: Folder
     
-    public init(_ email: String, _ firstName: String, _ lastName: String, _ folders: Array<Folder>) {
+    public init(_ email: String, _ firstName: String, _ lastName: String, _ folders: Array<Folder>, _ root: Folder) {
         self.EMAIL = email
         self.FIRST_NAME = firstName
         self.LAST_NAME = lastName
         self.FOLDERS = folders
+        self.ROOT = root
     }
     
     public func getFolder(_ folderId: String) -> Folder? {

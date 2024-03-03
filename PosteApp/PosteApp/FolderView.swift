@@ -9,8 +9,110 @@ import SwiftUI
 
 // STUB: for the FolderView page
 struct FolderView: View {
+
+    @State private var search = ""
+    @State private var startViewChange = false
+    @StateObject var appCon = AppController.GetAppController()
+    
+    // Function to handle the "Back" Button being clicked
+    func BackPressed() {
+        startViewChange = true
+        appCon.SetActiveView(AppController.ActiveView.login)
+    }
+    
+    func SearchPressed() {
+        // STUB ----------------------------------------------
+    }
+    
     var body: some View {
-        Text("Folder View")
+        NavigationView {
+            // switch statment for page changing
+            if startViewChange && appCon.activeView != AppController.ActiveView.login {
+                switch appCon.activeView {
+                case .folder:
+                    FolderView()
+                case .register:
+                    RegisterView()
+                case .login:
+                    LoginView()
+                case .splash:
+                    SplashView()
+                }
+            }
+            // Build the view layout
+            else {
+                VStack(alignment: .leading) {
+                    HStack(alignment: .center){
+                        VStack(alignment: .leading) {
+                            Button(action: BackPressed) {
+                                Label("Dashboard", systemImage: "arrow.backward").foregroundColor(.posteGrey)
+                            }.padding(.top)
+                            Text(appCon.activeFolder.TITLE)
+                                .font(.largeTitle)
+                                .multilineTextAlignment(.center)
+                                .bold()
+                                .fontWeight(.heavy)
+                                .padding(.leading, 24.0)
+                        }
+                        Spacer()
+                        Image("PosteLogo").resizable().aspectRatio(contentMode: .fit).frame(height: 80.0)
+                    }.frame(maxHeight: 80)
+                    
+                    if !appCon.IsInRoot() {
+                        if appCon.activeFolder.DESCRIPTION != nil {
+                            Text((appCon.activeFolder.DESCRIPTION)!)
+                                .font(.subheadline)
+                                .multilineTextAlignment(.leading)
+                                .padding(.leading, 24.0).foregroundColor(.posteGrey)
+                        }
+                    }
+                    else {
+                        Text("Find yourself!!!")
+                            .font(.headline)
+                            .multilineTextAlignment(.leading)
+                    }
+                    HStack {
+                        Button(action: SearchPressed) {
+                            Image(systemName: "magnifyingglass").aspectRatio(contentMode: .fit).foregroundColor(.posteGrey).frame(width:5)
+                        }.padding()
+                        TextField("Search Here", text: $search).padding().frame(width: 300, height: 50).background(Color.black.opacity(0.10)).cornerRadius(10.0).keyboardType(.emailAddress/*@END_MENU_TOKEN@*/).textContentType(/*@START_MENU_TOKEN@*/.emailAddress).autocapitalization(.none)
+                    }
+                    HStack {
+                        Button("New Post") {
+                            // STUB -----------------------------------
+                        }
+                        .padding()
+                        .foregroundColor(.black)
+                        .frame(width: 110, height: 30)
+                        .background(Color("mainLight"))
+                        .cornerRadius(10).font(.footnote)
+                        Button("New Folder") {
+                            // STUB -----------------------------------
+                        }
+                        .padding()
+                        .foregroundColor(.black)
+                        .frame(width: 110, height: 30)
+                        .background(Color("mainLight"))
+                        .cornerRadius(10).font(.footnote)
+                        Button("Share Folder") {
+                            // STUB -----------------------------------
+                        }
+                        .padding()
+                        .foregroundColor(.black)
+                        .frame(width: 110, height: 30)
+                        .background(Color("mainLight"))
+                        .cornerRadius(10).font(.footnote)
+                    }
+                    ScrollView {
+                        
+                    }.frame(height: 150).background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
+                    ScrollView {
+                        
+                    }.frame(height: 390).background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
+                    Spacer()
+                }.padding(.all)
+            }
+        }.navigationTitle("Folder View")
     }
 }
 

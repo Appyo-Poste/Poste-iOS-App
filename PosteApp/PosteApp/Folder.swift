@@ -9,22 +9,25 @@ import Foundation
 
 public class Folder {
     let TITLE:String
-    let SHARES:Array<PermitedUser>
+    let DESCRIPTION:String?
+    let SHARES:Array<PermitedUser>?
     let ROOT:Folder?
-    let FOLDERS:Array<Folder>
-    let POSTS:Array<Post>
+    var folders:Array<Folder> = Array()
+    var posts:Array<Post> = Array()
     
-    public init(_ title: String, _ shares: Array<PermitedUser>, _ root: Folder?, _ folders: Array<Folder>, _ posts: Array<Post>) {
+    public init(_ title: String, _ description: String? , _ shares: Array<PermitedUser>?, _ root: Folder?) {
         self.TITLE = title
+        self.DESCRIPTION = description
         self.SHARES = shares
         self.ROOT = root
-        self.FOLDERS = folders
-        self.POSTS = posts
     }
     
     public func getFolder(_ folderId: String) -> Folder? {
         var ret:Folder? = nil
-        for f in FOLDERS {
+        if folders.isEmpty {
+            return ret
+        }
+        for f in folders {
             if f.TITLE == folderId {
                 ret = f
             }
@@ -34,7 +37,10 @@ public class Folder {
     
     public func getPost(_ postId: String) -> Post? {
         var ret:Post? = nil
-        for p in POSTS {
+        if posts.isEmpty {
+            return ret
+        }
+        for p in posts {
             if p.TITLE == postId {
                 ret = p
             }
