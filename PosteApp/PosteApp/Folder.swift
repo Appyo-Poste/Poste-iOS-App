@@ -47,4 +47,18 @@ public class Folder {
         }
         return ret
     }
+    
+    public func isShared() -> Bool {
+        var ret = true
+        if SHARES != nil {
+            if SHARES!.isEmpty {
+                ret = false
+            }
+        }
+        else {
+            ret = false
+        }
+            
+        return ret
+    }
 }

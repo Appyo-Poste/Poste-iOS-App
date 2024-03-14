@@ -44,9 +44,11 @@ struct FolderView: View {
                 VStack(alignment: .leading) {
                     HStack(alignment: .center){
                         VStack(alignment: .leading) {
-                            Button(action: BackPressed) {
-                                Label("Dashboard", systemImage: "arrow.backward").foregroundColor(.posteGrey)
-                            }.padding(.top)
+                            if !appCon.IsInRoot() {
+                                Button(action: BackPressed) {
+                                    Label("Dashboard", systemImage: "arrow.backward").foregroundColor(.posteGrey)
+                                }.padding(.top)
+                            }
                             Text(appCon.activeFolder.TITLE)
                                 .font(.largeTitle)
                                 .multilineTextAlignment(.center)
@@ -65,11 +67,6 @@ struct FolderView: View {
                                 .multilineTextAlignment(.leading)
                                 .padding(.leading, 24.0).foregroundColor(.posteGrey)
                         }
-                    }
-                    else {
-                        Text("Find yourself!!!")
-                            .font(.headline)
-                            .multilineTextAlignment(.leading)
                     }
                     HStack {
                         Button(action: SearchPressed) {
@@ -103,9 +100,26 @@ struct FolderView: View {
                         .background(Color("mainLight"))
                         .cornerRadius(10).font(.footnote)
                     }
-                    ScrollView {
+                    List(appCon.folderCards) { folderCard in
+                        HStack {
+                            VStack {
+                                if folderCard.shared {
+                                    Image(systemName: "folder.fill.badge.person.crop").resizable().aspectRatio(contentMode: .fit).frame(width: 30)
+                                }
+                                else {
+                                    Image(systemName: "folder.fill").resizable().aspectRatio(contentMode: .fit).frame(width: 30)
+                                }
+                                Text(String(folderCard.conentCount) + " Posts")
+                            }
+                            Text(folderCard.title)
+                            Spacer()
+                            Image(systemName: "ellipsis").resizable().aspectRatio(contentMode: .fit).frame(width: 40
+                            )
+                        }
                         
-                    }.frame(height: 150).background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
+                    }
+                    .listStyle(.plain)
+                    .frame(height: 150).background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
                     ScrollView {
                         
                     }.frame(height: 390).background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
