@@ -109,19 +109,30 @@ struct FolderView: View {
                                 else {
                                     Image(systemName: "folder.fill").resizable().aspectRatio(contentMode: .fit).frame(width: 30)
                                 }
-                                Text(String(folderCard.conentCount) + " Posts")
+                                Text(String(folderCard.conentCount) + " Posts").frame(width: 80.0)
                             }
-                            Text(folderCard.title)
+                            Text(folderCard.title).frame(width: 100.0)
+                            Text(folderCard.date).frame(width: 80.0)
                             Spacer()
                             Image(systemName: "ellipsis").resizable().aspectRatio(contentMode: .fit).frame(width: 40
                             )
                         }
-                        
                     }
                     .listStyle(.plain)
                     .frame(height: 150).background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
-                    ScrollView {
-                        
+                    List(appCon.postCards) { postCard in
+                        HStack {
+                            VStack {
+                                HStack {
+                                    Spacer()
+                                    Image(systemName: "pencil.circle.fill").resizable().aspectRatio(contentMode: .fit).frame(width: 40)
+                                        .foregroundStyle(Color("mainLight"))
+                                }.frame(width: 100.0)
+                                Text(postCard.title).font(.title).frame(width: 100.0)
+                                Image(systemName: "doc").resizable().aspectRatio(contentMode: .fit).frame(width: 30)
+                                Text(postCard.date).frame(width: 80.0)
+                            }
+                        }
                     }.frame(height: 390).background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
                     Spacer()
                 }.padding(.all)
