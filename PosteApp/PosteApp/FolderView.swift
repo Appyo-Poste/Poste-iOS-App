@@ -24,6 +24,15 @@ struct FolderView: View {
         // STUB ----------------------------------------------
     }
     
+    func linkPressed(url: String) {
+        // STUB ----------------------------------------------
+    }
+    
+    let layout = [
+        GridItem(spacing: 40),
+        GridItem(spacing: 40),
+        GridItem(spacing: 40)
+    ]
     var body: some View {
         NavigationView {
             // switch statment for page changing
@@ -73,7 +82,7 @@ struct FolderView: View {
                             Image(systemName: "magnifyingglass").aspectRatio(contentMode: .fit).foregroundColor(.posteGrey).frame(width:5)
                         }.padding()
                         TextField("Search Here", text: $search).padding().frame(width: 300, height: 50).background(Color.black.opacity(0.10)).cornerRadius(10.0).keyboardType(.emailAddress/*@END_MENU_TOKEN@*/).textContentType(/*@START_MENU_TOKEN@*/.emailAddress).autocapitalization(.none)
-                    }
+                    }.padding(.horizontal)
                     HStack {
                         Button("New Post") {
                             // STUB -----------------------------------
@@ -91,15 +100,7 @@ struct FolderView: View {
                         .frame(width: 110, height: 30)
                         .background(Color("mainLight"))
                         .cornerRadius(10).font(.footnote)
-                        Button("Share Folder") {
-                            // STUB -----------------------------------
-                        }
-                        .padding()
-                        .foregroundColor(.black)
-                        .frame(width: 110, height: 30)
-                        .background(Color("mainLight"))
-                        .cornerRadius(10).font(.footnote)
-                    }
+                    }.padding(.horizontal)
                     List(appCon.folderCards) { folderCard in
                         HStack {
                             VStack {
@@ -120,22 +121,30 @@ struct FolderView: View {
                     }
                     .listStyle(.plain)
                     .frame(height: 150).background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
-                    List(appCon.postCards) { postCard in
-                        HStack {
-                            VStack {
-                                HStack {
+                    ScrollView {
+                        LazyVGrid(columns: layout) {
+                            ForEach(appCon.postCards) { postCard in
+                                VStack {
+                                    Button(postCard.title) {
+                                        linkPressed(url: postCard.url)
+                                    }.font(.headline).frame(width: 100.0).padding(.top, 5.0).foregroundColor(.black)
                                     Spacer()
-                                    Image(systemName: "pencil.circle.fill").resizable().aspectRatio(contentMode: .fit).frame(width: 40)
-                                        .foregroundStyle(Color("mainLight"))
-                                }.frame(width: 100.0)
-                                Text(postCard.title).font(.title).frame(width: 100.0)
-                                Image(systemName: "doc").resizable().aspectRatio(contentMode: .fit).frame(width: 30)
-                                Text(postCard.date).frame(width: 80.0)
+                                    
+                                    Button {
+                                        print("yo")
+                                    } label: { Image(systemName: "doc").resizable().aspectRatio(contentMode: .fit).frame(width: 50).foregroundColor(Color.black)
+                                    
+                                    //label: { Label("", systemImage: "doc")
+                                        
+                                    }
+                                    //Image(systemName: "doc").resizable().aspectRatio(contentMode: .fit).frame(width: 50)
+                                    Text(postCard.date).font(.footnote)
+                                }.frame(width: 100.0, height: 100.0).padding().background(Color.white).cornerRadius(10)
                             }
                         }
                     }.frame(height: 390).background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
                     Spacer()
-                }.padding(.all)
+                }
             }
         }.navigationTitle("Folder View")
     }

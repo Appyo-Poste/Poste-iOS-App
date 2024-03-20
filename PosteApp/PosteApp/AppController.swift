@@ -75,10 +75,10 @@ public class AppController : ObservableObject {
         folderCards.append(FolderCard(folder: t2, shared: t2.isShared(), title: t2.TITLE, date: t2.DATE ?? "NO DATE", conentCount: (t2.folders.count + t2.posts.count)))
         folderCards.append(FolderCard(folder: t3, shared: t3.isShared(), title: t3.TITLE, date: t3.DATE ?? "NO DATE", conentCount: (t3.folders.count + t3.posts.count)))
         
-        postCards.append(PostCard(post: p1, title: p1.TITLE, date: p1.DATE))
-        postCards.append(PostCard(post: p2, title: p2.TITLE, date: p2.DATE))
-        postCards.append(PostCard(post: p3, title: p3.TITLE, date: p3.DATE))
-        postCards.append(PostCard(post: p4, title: p4.TITLE, date: p4.DATE))
+        postCards.append(PostCard(url: p1.URL, title: p1.TITLE, date: p1.DATE))
+        postCards.append(PostCard(url: p2.URL, title: p2.TITLE, date: p2.DATE))
+        postCards.append(PostCard(url: p3.URL, title: p3.TITLE, date: p3.DATE))
+        postCards.append(PostCard(url: p4.URL, title: p4.TITLE, date: p4.DATE))
                         
         // -------------------------------------------------------------------------
     }

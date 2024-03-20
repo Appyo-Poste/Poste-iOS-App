@@ -10,7 +10,7 @@ import Foundation
 struct PostCard: Identifiable{
     var id: UUID = UUID()
     
-    var post:Post
+    var url:String
     var title:String
     var date:String
 }
