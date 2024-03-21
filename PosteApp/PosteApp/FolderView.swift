@@ -58,7 +58,7 @@ struct FolderView: View {
                                     Label("Dashboard", systemImage: "arrow.backward").foregroundColor(.posteGrey)
                                 }.padding(.top)
                             }
-                            Text(appCon.activeFolder.TITLE)
+                            Text(appCon.dataMod.activeFolder.TITLE)
                                 .font(.largeTitle)
                                 .multilineTextAlignment(.center)
                                 .bold()
@@ -70,8 +70,8 @@ struct FolderView: View {
                     }.frame(maxHeight: 80)
                     
                     if !appCon.IsInRoot() {
-                        if appCon.activeFolder.DESCRIPTION != nil {
-                            Text((appCon.activeFolder.DESCRIPTION)!)
+                        if appCon.dataMod.activeFolder.DESCRIPTION != nil {
+                            Text((appCon.dataMod.activeFolder.DESCRIPTION)!)
                                 .font(.subheadline)
                                 .multilineTextAlignment(.leading)
                                 .padding(.leading, 24.0).foregroundColor(.posteGrey)
@@ -101,7 +101,7 @@ struct FolderView: View {
                         .background(Color("mainLight"))
                         .cornerRadius(10).font(.footnote)
                     }.padding(.horizontal)
-                    List(appCon.folderCards) { folderCard in
+                    List(appCon.dataMod.folderCards) { folderCard in
                         HStack {
                             VStack {
                                 if folderCard.shared {
@@ -123,7 +123,7 @@ struct FolderView: View {
                     .frame(height: 150).background(Color(hue: 1.0, saturation: 0.0, brightness: 0.9))
                     ScrollView {
                         LazyVGrid(columns: layout) {
-                            ForEach(appCon.postCards) { postCard in
+                            ForEach(appCon.dataMod.postCards) { postCard in
                                 VStack {
                                     Button(postCard.title) {
                                         linkPressed(url: postCard.url)
@@ -133,11 +133,7 @@ struct FolderView: View {
                                     Button {
                                         print("yo")
                                     } label: { Image(systemName: "doc").resizable().aspectRatio(contentMode: .fit).frame(width: 50).foregroundColor(Color.black)
-                                    
-                                    //label: { Label("", systemImage: "doc")
-                                        
                                     }
-                                    //Image(systemName: "doc").resizable().aspectRatio(contentMode: .fit).frame(width: 50)
                                     Text(postCard.date).font(.footnote)
                                 }.frame(width: 100.0, height: 100.0).padding().background(Color.white).cornerRadius(10)
                             }

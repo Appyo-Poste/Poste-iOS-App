@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B610F01F2BA6046000E30AFC /* PostCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B610F01E2BA6046000E30AFC /* PostCard.swift */; };
+		B611E6192BAB929E000EE1C2 /* DataMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B611E6182BAB929E000EE1C2 /* DataMod.swift */; };
 		B636DECF2B9018A000AF53B0 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636DECE2B9018A000AF53B0 /* Folder.swift */; };
 		B636DED12B9019B600AF53B0 /* PermitedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636DED02B9019B600AF53B0 /* PermitedUser.swift */; };
 		B63B5D832B914E5C00F3DB70 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B5D822B914E5C00F3DB70 /* User.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		B610F01E2BA6046000E30AFC /* PostCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCard.swift; sourceTree = "<group>"; };
+		B611E6182BAB929E000EE1C2 /* DataMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMod.swift; sourceTree = "<group>"; };
 		B636DECE2B9018A000AF53B0 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		B636DED02B9019B600AF53B0 /* PermitedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermitedUser.swift; sourceTree = "<group>"; };
 		B63B5D822B914E5C00F3DB70 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				B63B5D822B914E5C00F3DB70 /* User.swift */,
 				B63B5D862BA26DE900F3DB70 /* FolderCard.swift */,
 				B610F01E2BA6046000E30AFC /* PostCard.swift */,
+				B611E6182BAB929E000EE1C2 /* DataMod.swift */,
 				B69EF1962B72FC1A00C607A5 /* Assets.xcassets */,
 				B69EF1982B72FC1A00C607A5 /* Preview Content */,
 			);
@@ -172,6 +175,7 @@
 			files = (
 				B69EF1952B72FC1900C607A5 /* LoginView.swift in Sources */,
 				B64B5F662B7D7BA200ABC5F4 /* FolderView.swift in Sources */,
+				B611E6192BAB929E000EE1C2 /* DataMod.swift in Sources */,
 				B69EF1A12B7303A100C607A5 /* SplashView.swift in Sources */,
 				B673F58A2B8ACFA400B738FB /* Post.swift in Sources */,
 				B6D655612B77261600BBA41D /* Postman.swift in Sources */,

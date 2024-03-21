@@ -12,11 +12,11 @@ public class Folder {
     let DESCRIPTION:String?
     let DATE:String?
     let SHARES:Array<PermitedUser>?
-    let ROOT:Folder?
+    let ROOT:String
     var folders:Array<Folder> = Array()
     var posts:Array<Post> = Array()
     
-    public init(_ title: String, _ description: String? , _ date: String?, _ shares: Array<PermitedUser>?, _ root: Folder?) {
+    public init(_ title: String, _ description: String? , _ date: String?, _ shares: Array<PermitedUser>?, _ root: String) {
         self.TITLE = title
         self.DESCRIPTION = description
         self.DATE = date
