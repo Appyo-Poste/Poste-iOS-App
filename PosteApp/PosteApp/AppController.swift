@@ -59,4 +59,11 @@ public class AppController : ObservableObject {
         }
         return ret
     }
+    
+    public func OpenFolder(folderName: String) {
+        var next:Folder? = Postman.GetFolder(folderName: folderName)
+        if (next != nil) {
+            dataMod.dashBoardFolder = next!
+        }
+    }
 }
