@@ -24,8 +24,21 @@ struct FolderView: View {
         // STUB ----------------------------------------------
     }
     
-    func linkPressed(url: String) {
+    func FolderPressed() {
         // STUB ----------------------------------------------
+    }
+    
+    func PostPressed(urlLink: String) {
+        guard let url = URL(string: urlLink) else {
+            print(urlLink)
+            return
+        }
+        if #available(iOS 17.2, *) {
+            UIApplication.shared.open(url, options:  [:], completionHandler: nil)
+        }
+        else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     let layout = [
@@ -105,10 +118,16 @@ struct FolderView: View {
                         HStack {
                             VStack {
                                 if folderCard.shared {
-                                    Image(systemName: "folder.fill.badge.person.crop").resizable().aspectRatio(contentMode: .fit).frame(width: 30)
+                                    Button {
+                                        FolderPressed()
+                                    } label: { Image(systemName: "folder.fill.badge.person.crop").resizable().aspectRatio(contentMode: .fit).frame(width: 30).foregroundColor(Color.black)
+                                    }
                                 }
                                 else {
-                                    Image(systemName: "folder.fill").resizable().aspectRatio(contentMode: .fit).frame(width: 30)
+                                    Button {
+                                        FolderPressed()
+                                    } label: { Image(systemName: "folder.fill").resizable().aspectRatio(contentMode: .fit).frame(width: 30).foregroundColor(Color.black)
+                                    }
                                 }
                                 Text(String(folderCard.conentCount) + " Posts").frame(width: 80.0)
                             }
@@ -126,12 +145,14 @@ struct FolderView: View {
                             ForEach(appCon.dataMod.postCards) { postCard in
                                 VStack {
                                     Button(postCard.title) {
-                                        linkPressed(url: postCard.url)
+                                        print("Post touched")
+                                        PostPressed(urlLink: postCard.url)
                                     }.font(.headline).frame(width: 100.0).padding(.top, 5.0).foregroundColor(.black)
                                     Spacer()
                                     
                                     Button {
-                                        print("yo")
+                                        print("Post touched")
+                                        PostPressed(urlLink: postCard.url)
                                     } label: { Image(systemName: "doc").resizable().aspectRatio(contentMode: .fit).frame(width: 50).foregroundColor(Color.black)
                                     }
                                     Text(postCard.date).font(.footnote)

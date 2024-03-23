@@ -13,7 +13,7 @@ public class Folder {
     let DATE:String?
     let SHARES:Array<PermitedUser>?
     let ROOT:String
-    var folders:Array<Folder> = Array()
+    var folders:Array<String> = Array()
     var posts:Array<Post> = Array()
     
     public init(_ title: String, _ description: String? , _ date: String?, _ shares: Array<PermitedUser>?, _ root: String) {
@@ -23,19 +23,6 @@ public class Folder {
         self.SHARES = shares
         self.ROOT = root
         
-    }
-    
-    public func getFolder(_ folderId: String) -> Folder? {
-        var ret:Folder? = nil
-        if folders.isEmpty {
-            return ret
-        }
-        for f in folders {
-            if f.TITLE == folderId {
-                ret = f
-            }
-        }
-        return ret
     }
     
     public func getPost(_ postId: String) -> Post? {
